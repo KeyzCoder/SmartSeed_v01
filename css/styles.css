@@ -1,4 +1,3 @@
-
 body {
     margin: 0;
     padding: 0;
@@ -6,8 +5,19 @@ body {
     color: #00430f;
     font-family: 'Montserrat', sans-serif;
   }
-  
-  .material-icons-outlined {
+
+/* Prevent scrolling */
+html, body {
+  overflow: hidden;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+  body.fade-in {
+    opacity: 1; /* Fully visible */
+}
+    .material-icons-outlined {
     vertical-align: middle;
     line-height: 1px;
     font-size: 35px;
@@ -21,6 +31,17 @@ body {
       'sidebar header header header'
       'sidebar main main main';
     height: 100vh;
+  }
+  
+  .logo {
+    grid-area: header;
+    position: absolute; 
+    top: 10px; 
+    left: 75px; 
+    width: 90px; 
+    height: auto;
+    margin-right: 10px; 
+    z-index: 1000; 
   }
 
   .main-title h2 {
@@ -81,6 +102,24 @@ body {
     padding: 20px 20px 20px 20px;
     font-size: 18px;
   }
+
+  .sidebar-list-item-logout {
+    padding: 20px 20px 20px 20px;
+    font-size: 18px;
+
+    position: absolute;
+    bottom: 20px; /* Moves the item 20px from the bottom */
+    left: 0px;
+  }
+
+  .sidebar-list-item-logout:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    cursor: pointer;
+    width: 20%; /* Increase width by 50% */
+    position: absolute;
+    bottom: 20px; /* Moves the item 20px from the bottom */
+    left: 0px;
+  }  
   
   .sidebar-list-item:hover {
     background-color: rgba(255, 255, 255, 0.2);
@@ -88,6 +127,11 @@ body {
   }
   
   .sidebar-list-item > a {
+    text-decoration: none;
+    color: #ffffff;
+  }
+
+  .sidebar-list-item-logout > a {
     text-decoration: none;
     color: #ffffff;
   }

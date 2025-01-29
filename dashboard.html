@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -14,6 +13,24 @@
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="css/styles.css">
+
+    <!-- Fade-in Animation CSS -->
+    <style>
+      /* Fade-in animation */
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+
+      /* Apply the animation to the body */
+      .fade-in {
+        animation: fadeIn 1s ease-in-out; /* 1 second duration */
+      }
+    </style>
   </head>
   <body>
     <div class="grid-container">
@@ -33,19 +50,19 @@
       <aside id="sidebar">
         <div class="sidebar-title">
           <div class="sidebar-brand">
-            
           </div>
           <span class="material-icons-outlined" onclick="closeSidebar()">close</span>
         </div>
 
         <ul class="sidebar-list">
           <li class="sidebar-list-item">
-            <a href="#" target="_blank">
+            <a href="dashboard.html">
               <span class="material-icons-outlined">poll</span> Dashboard
             </a>
           </li>
           <li class="sidebar-list-item">
-            <a href="#" target="_blank">
+            <!-- Link to farmers.html -->
+            <a href="farmers.html">
               <span class="material-icons-outlined">groups</span> Farmers
             </a>
           </li>
@@ -57,23 +74,20 @@
           <li class="sidebar-list-item">
             <a href="#" target="_blank">
               <span class="material-icons-outlined">info</span> Info
-                    </a>
-                    </li>
-                    <li class="sidebar-list-item">
-                    <a href="index.html">
-                      <span class="material-icons-outlined">logout</span> Logout
-                    </a>
-                    </li>
-                  </ul>
-                  </aside>
+            </a>
+          </li>
+          <li class="sidebar-list-item-logout">
+            <a href="index.html">
+              <span class="material-icons-outlined">logout</span> Logout
+            </a>
+          </li>          
+        </ul>
+      </aside>
       <!-- End Sidebar -->
 
       <!-- Main -->
       <main class="main-container">
-        
-
         <div class="main-cards">
-
           <div class="card">
             <div class="card-inner">
               <h3>Total Farmers</h3>
@@ -105,15 +119,26 @@
             </div>
             <h1>56</h1>
           </div>
-
         </div>
-
-
+      </main>
       <!-- End Main -->
 
     </div>
-
-
     
+    <header class="header">
+      <div class="menu-icon" onclick="openSidebar()">
+        <span class="material-icons-outlined"></span>
+      </div>
+      <div class="main-title">
+        <img src="assets/logo.png" alt="Logo" class="logo">
+      </div>
+    </header>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function() {
+          // Add fade-in effect
+          document.body.classList.add("fade-in");
+      });
+    </script>   
   </body>
 </html>

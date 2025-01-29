@@ -1,0 +1,119 @@
+/* Apply a fade-in effect */
+body {
+    background-color: #f2f2f2;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    opacity: 0; /* Start fully transparent */
+    transition: opacity 1.5s ease-in-out; /* Smooth fade-in */
+}
+
+body.fade-in {
+    opacity: 1; /* Fully visible */
+}
+  
+.farm-image {
+    position: absolute;
+    top: -136px; /* Distance from the top */
+    left: 1px; /* Distance from the left */
+    width: 100%;/* Stretch to fill the container width */
+    height: 60.5%; /* Stretch to fill the container height */
+    border-radius: 0px; /* Add rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add shadow for a stylish effect */
+    object-fit: fill; /* Stretch the image, ignoring aspect ratio */
+    opacity: 0.5; /* Adjust transparency (0 = fully transparent, 1 = fully opaque) */
+    z-index: 0; /* Place the image below other elements */
+  }  
+  
+.logo {
+    position: absolute;
+    top: 525px; /* Distance from the top */
+    left: 635px; /* Distance from the left */
+    width: 90px; /* Adjust as needed */
+    height: auto; /* Maintain aspect ratio */
+    margin-right: 10px; /* Space between logo and text */
+    display: inline-block;
+  }  
+
+.green-container {
+    background-color: #56bb49;
+    border: 1px solid #56bb49;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    border-radius: 5px;
+    height: 200px;
+    width: 1500px;
+
+    /* Position it freely */
+    position: fixed; /* Keeps it in a specific location even when scrolling */
+    top: 1px; /* Vertical position */
+    left: 1px; /* Horizontal position */
+    z-index: -1; /* Ensure it's behind the login container */
+}
+
+.login-container {
+    background-color: #ffffff;
+    border: 1px solid #ccc;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    border-radius: 5px;
+    width: 400px;
+    z-index: 1; /* Ensure it's above the green container */
+}
+
+h2 {
+    text-align: center;
+    color: #333;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    color: #555;
+}
+
+input[type="email"],
+input[type="password"] {
+    width: 90%;
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.button-group {
+    display: flex;
+    justify-content: space-between;
+}
+
+button {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button[type="submit"] {
+    background-color: #00698f;
+    color: white;
+}
+
+button[type="submit"]:hover {
+    background-color: #005577;
+}
+
+button[type="button"] {
+    background-color: #ccc;
+    color: #333;
+}
+
+button[type="button"]:hover {
+    background-color: #bbb;
+}

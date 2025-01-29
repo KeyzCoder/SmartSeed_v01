@@ -1,0 +1,413 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #ffffff;
+    color: #00430f;
+    font-family: 'Montserrat', sans-serif;
+  }
+
+h1 {
+    margin-bottom: 20px; /* Adds space between h1 and p */
+    position: absolute; 
+    top: 100px; 
+    left: 250px; 
+    text-align: center;
+    margin: 0 auto;
+    width: 80%; /* Adjust width if needed */
+}
+h3 {
+  font-size: 30px;
+  margin-bottom: 20px; /* Adds space between h1 and p */
+  position: absolute; 
+  top: 415px; 
+  left: 250px; 
+  text-align: center;
+  margin: 0 auto;
+  width: 80%; /* Adjust width if needed */
+  color: #00430f;
+}
+.team-member-cyrus {
+  display: block;
+  text-align: center;
+  font-weight: bold;
+  margin-top: 10px;
+  position: absolute; 
+  top: 225px; 
+  left: 750px; 
+}
+.dev-cyrus {
+  font-size: 14px;
+  display: block;
+  text-align: center;
+  font-weight: normal;
+  margin-top: 10px;
+  position: absolute; 
+  top: 250px; 
+  left: 790px; 
+}
+.team-member-miks {
+  display: block;
+  text-align: center;
+  font-weight: bold;
+  margin-top: 10px;
+  position: absolute; 
+  top: 225px; 
+  left: 410px; 
+}
+.dev-miks {
+  font-size: 14px;
+  display: block;
+  text-align: center;
+  font-weight: normal;
+  margin-top: 10px;
+  position: absolute; 
+  top: 250px; 
+  left: 510px; 
+}
+.team-member-queen {
+  display: block;
+  text-align: center;
+  font-weight: bold;
+  margin-top: 10px;
+  position: absolute; 
+  top: 225px; 
+  left: 80px; 
+}
+.dev-queen {
+  font-size: 14px;
+  display: block;
+  text-align: center;
+  font-weight: normal;
+  margin-top: 10px;
+  position: absolute; 
+  top: 250px; 
+  left: 175px; 
+}
+.team-member-ailene {
+  display: block;
+  text-align: center;
+  font-weight: bold;
+  margin-top: 10px;
+  position: absolute; 
+  top: 300px; 
+  left: 280px; 
+}
+.dev-ailene {
+  font-size: 14px;
+  display: block;
+  text-align: center;
+  font-weight: normal;
+  margin-top: 10px;
+  position: absolute; 
+  top: 325px; 
+  left: 320px; 
+}
+.team-member-prince {
+  display: block;
+  text-align: center;
+  font-weight: bold;
+  margin-top: 10px;
+  position: absolute; 
+  top: 300px; 
+  left: 580px; 
+}
+.dev-prince {
+  font-size: 14px;
+  display: block;
+  text-align: center;
+  font-weight: normal;
+  margin-top: 10px;
+  position: absolute; 
+  top: 325px; 
+  left: 658px; 
+}
+.styled-line {
+  border: none; /* Remove default border */
+  height: 3px; /* Adjust thickness */
+  background-color: #00430f; /* Line color */
+  width: 50%; /* Adjust width */
+  margin: 20px auto; /* Center the line */
+  position: absolute; 
+  top: 380px; 
+  left: 450px; 
+}
+p {
+    font-size: 18px;
+    position: absolute; 
+    top: 235px; 
+    left: 250px; 
+    text-align: center;
+    margin: 0 auto;
+    width: 80%; /* Adjust width if needed */
+    color: rgb(0, 0, 0);
+}
+
+/* Prevent scrolling */
+html, body {
+  overflow: hidden;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+  body.fade-in {
+    opacity: 1; /* Fully visible */
+}
+    .material-icons-outlined {
+    vertical-align: middle;
+    line-height: 1px;
+    font-size: 35px;
+  }
+  
+  .grid-container {
+    display: grid;
+    grid-template-columns: 260px 1fr 1fr 1fr;
+    grid-template-rows: 0.2fr 3fr;
+    grid-template-areas:
+      'sidebar header header header'
+      'sidebar main main main';
+    height: 100vh;
+  }
+  
+  .logo {
+    grid-area: header;
+    position: absolute; 
+    top: 10px; 
+    left: 75px; 
+    width: 90px; 
+    height: auto;
+    margin-right: 10px; 
+    z-index: 1000; 
+  }
+
+  .main-title h2 {
+    color: darkgreen;
+  }
+  
+  /* ---------- HEADER ---------- */
+  .header {
+    grid-area: header;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 30px 0 30px;
+    box-shadow: 0 6px 7px -3px rgba(0, 0, 0, 0.35);
+  }
+  
+  .menu-icon {
+    display: none;
+  }
+  
+  /* ---------- SIDEBAR ---------- */
+  
+  #sidebar {
+    grid-area: sidebar;
+    height: 100%;
+    background-color: darkgreen;
+    overflow-y: auto;
+    transition: all 0.5s;
+    -webkit-transition: all 0.5s;
+  }
+  
+  .sidebar-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 30px 30px 30px;
+    margin-bottom: 30px;
+  }
+  
+  .sidebar-title > span {
+    display: none;
+  }
+  
+  .sidebar-brand {
+    margin-top: 15px;
+    font-size: 20px;
+    font-weight: 700;
+  }
+  
+  .sidebar-list {
+    padding: 0;
+    margin-top: 15px;
+    list-style-type: none;
+  }
+  
+  .sidebar-list-item {
+    padding: 20px 20px 20px 20px;
+    font-size: 18px;
+  }
+
+  .sidebar-list-item-logout {
+    padding: 20px 20px 20px 20px;
+    font-size: 18px;
+
+    position: absolute;
+    bottom: 20px; /* Moves the item 20px from the bottom */
+    left: 0px;
+  }
+
+  .sidebar-list-item-logout:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    cursor: pointer;
+    width: 20%; /* Increase width by 50% */
+    position: absolute;
+    bottom: 20px; /* Moves the item 20px from the bottom */
+    left: 0px;
+  }  
+  
+  .sidebar-list-item:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    cursor: pointer;
+  }
+  
+  .sidebar-list-item > a {
+    text-decoration: none;
+    color: #ffffff;
+  }
+
+  .sidebar-list-item-logout > a {
+    text-decoration: none;
+    color: #ffffff;
+  }
+  
+  .sidebar-responsive {
+    display: inline !important;
+    position: absolute;
+    /*
+      the z-index of the ApexCharts is 11
+      we want the z-index of the sidebar higher so that
+      the charts are not showing over the sidebar 
+      on small screens
+    */
+    z-index: 12 !important;
+  }
+  
+  /* ---------- MAIN ---------- */
+  
+  .main-container {
+    grid-area: main;
+    overflow-y: auto;
+    padding: 20px 20px;
+    color: rgba(255, 255, 255, 0.95);
+  }
+  
+  .main-title {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .main-cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 20px;
+    margin: 20px 0;
+  }
+  
+  .card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 25px;
+    border-radius: 5px;
+  }
+  
+  .card:first-child {
+    background-color: #2962ff;
+  }
+  
+  .card:nth-child(2) {
+    background-color: #ff6d00;
+  }
+  
+  .card:nth-child(3) {
+    background-color: #2e7d32;
+  }
+  
+  .card:nth-child(4) {
+    background-color: #d50000;
+  }
+  
+  .card-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .card-inner > .material-icons-outlined {
+    font-size: 45px;
+  }
+  
+  .charts {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin-top: 60px;
+  }
+  
+  .charts-card {
+    background-color: #4caf50; /* A suitable green color */
+    margin-bottom: 20px;    
+    padding: 25px;
+    box-sizing: border-box;
+    -webkit-column-break-inside: avoid;
+    border-radius: 5px;
+    box-shadow: 0 6px 7px -4px rgba(0, 0, 0, 0.2);
+  }
+  .chart-title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  /* ---------- MEDIA QUERIES ---------- */
+  
+  /* Medium <= 992px */
+  
+  @media screen and (max-width: 992px) {
+    .grid-container {
+      grid-template-columns: 1fr;
+      grid-template-rows: 0.2fr 3fr;
+      grid-template-areas:
+        'header'
+        'main';
+    }
+  
+    #sidebar {
+      display: none;
+    }
+  
+    .menu-icon {
+      display: inline;
+    }
+  
+    .sidebar-title > span {
+      display: inline;
+    }
+  }
+  
+  /* Small <= 768px */
+  
+  @media screen and (max-width: 768px) {
+    .main-cards {
+      grid-template-columns: 1fr;
+      gap: 10px;
+      margin-bottom: 0;
+    }
+  
+    .charts {
+      grid-template-columns: 1fr;
+      margin-top: 30px;
+    }
+  }
+  
+  /* Extra Small <= 576px */
+  
+  @media screen and (max-width: 576px) {
+    .hedaer-left {
+      display: none;
+    }
+  }
+
+

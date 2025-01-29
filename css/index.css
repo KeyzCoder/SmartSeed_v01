@@ -17,7 +17,7 @@ body.fade-in {
   
 .farm-image {
     position: absolute;
-    top: -136px; /* Distance from the top */
+    top: -140px; /* Distance from the top */
     left: 1px; /* Distance from the left */
     width: 100%;/* Stretch to fill the container width */
     height: 60.5%; /* Stretch to fill the container height */

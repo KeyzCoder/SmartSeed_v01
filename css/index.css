@@ -112,6 +112,9 @@ button[type="submit"]:hover {
 button[type="button"] {
     background-color: #ccc;
     color: #333;
+    position: fixed; /* Keeps it in a specific location even when scrolling */
+    top: 426.5px; /* Vertical position */
+    left: 798px; /* Horizontal position */
 }
 
 button[type="button"]:hover {

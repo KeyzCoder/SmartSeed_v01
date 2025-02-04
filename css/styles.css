@@ -22,6 +22,60 @@ html, body {
     line-height: 1px;
     font-size: 35px;
   }
+
+/* Button container styling */
+.button-container {
+  width: 200px;              /* Set width for the container */
+  padding: 20px;             /* Add padding around the button */
+  text-align: center;        /* Center the button inside the container */
+  margin-top: 20px;          /* Add space from other content */
+  position: absolute;      /* Position container absolute so we can drag it */
+  top: 550px;               /* Position container at 50px from top */
+  left: 300px;              /* Position container at 50px from left */
+}
+
+/* Button styling */
+.my-button {
+  width: 100%;              /* Make the button fill the width of its container */
+  padding: 10px;            /* Add padding inside the button */
+  font-size: 16px;          /* Set font size */
+  background-color: #007bff; /* Blue background */
+  color: #fff;              /* White text color */
+  border: none;             /* Remove default border */
+  border-radius: 5px;       /* Rounded corners */
+  cursor: pointer;         /* Change cursor to pointer when hovering */
+}
+
+.my-button:hover {
+  background-color: #0056b3; /* Darker blue on hover */
+}
+
+  /* Button container styling */
+.red-button-container {
+  width: 200px;              /* Set width for the container */
+  padding: 20px;             /* Add padding around the button */
+  text-align: center;        /* Center the button inside the container */
+  margin-top: 20px;          /* Add space from other content */
+  position: absolute;      /* Position container absolute so we can drag it */
+  top: 550px;               /* Position container at 50px from top */
+  left: 550px;              /* Position container at 50px from left */
+}
+
+/* Button styling */
+.my-button-red {
+  width: 100%;              /* Make the button fill the width of its container */
+  padding: 10px;            /* Add padding inside the button */
+  font-size: 16px;          /* Set font size */
+  background-color: #ff0000; /* Blue background */
+  color: #fff;              /* White text color */
+  border: none;             /* Remove default border */
+  border-radius: 5px;       /* Rounded corners */
+  cursor: pointer;         /* Change cursor to pointer when hovering */
+}
+
+.my-button-red:hover {
+  background-color: #b30000; /* Darker blue on hover */
+}
   
   .grid-container {
     display: grid;

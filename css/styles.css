@@ -44,6 +44,9 @@ html, body {
   border: none;             /* Remove default border */
   border-radius: 5px;       /* Rounded corners */
   cursor: pointer;         /* Change cursor to pointer when hovering */
+  position: absolute;      /* Position container absolute so we can drag it */
+  top: 5px;               /* Position container at 50px from top */
+  left: 800px;  
 }
 
 .my-button:hover {
@@ -277,6 +280,37 @@ html, body {
     display: flex;
     align-items: center;
     justify-content: center;
+  }
+
+  canvas {
+    width: 100%;
+    max-height: 300px;
+    margin-top: 20px;
+    max-width: 600px;        /* Set a max width */
+    height: 500px !important; /* Adjust height */
+    position: absolute;
+    bottom: 10px; /* Moves the item 20px from the bottom */
+    left: 280px;
+  }
+  #myLineChart {
+    width: 150%;      /* Makes it responsive */
+    max-width: 800px; /* Adjust the maximum width */
+    height: 400px;    /* Adjust the height */
+    margin: 20px auto; /* Center the chart */
+    display: block; /* Ensure proper alignment */
+    position: absolute;
+    bottom: -5px; /* Moves the item 20px from the bottom */
+    left: 280px;
+  }  
+
+  #myPieChart {
+    width: 200px !important;  /* Increase width */
+    height: 380px !important; /* Increase height */
+    max-width: 200px;
+    max-height: 200px;
+    position: absolute;
+    bottom: 90px; /* Moves the item 20px from the bottom */
+    left: 1115px;
   }
   
   /* ---------- MEDIA QUERIES ---------- */

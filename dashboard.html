@@ -3,13 +3,16 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
-    <title>Admin Dashboard</title>
+    <title>Dashboard</title>
 
     <!-- Montserrat Font -->
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 
     <!-- Material Icons -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
+   
+    <!-- Line Graph -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="css/styles.css">
@@ -81,11 +84,6 @@
       </aside>
       <!-- End Sidebar -->
 
-      <!-- Main -->
-      <div class="button-container">
-        <button class="my-button">Add Farmer</button>
-    </div>    
-
       <main class="main-container">
         <div class="main-cards">
           <div class="card">
@@ -118,9 +116,18 @@
               <span class="material-icons-outlined">grass</span>
             </div>
             <h1>56</h1>
-          </div>
+          </div>  
         </div>
       </main>
+
+      <canvas id="myLineChart"></canvas>
+
+      <canvas id="myPieChart"></canvas>
+
+      <div class="button-container">
+        <button class="my-button">Update Yeild</button>
+    </div>    
+
       <!-- End Main -->
 
     </div>
@@ -130,7 +137,7 @@
         <span class="material-icons-outlined"></span>
       </div>
       <div class="main-title">
-        <img src="assets/logo.png" alt="Logo" class="logo">
+        <img src="../assets/logo.png" alt="Logo" class="logo">
       </div>
     </header>
 
@@ -140,5 +147,89 @@
           document.body.classList.add("fade-in");
       });
     </script>   
-  </body>
+
+<script>
+  // Get the canvas element
+  const ctx = document.getElementById('myLineChart').getContext('2d');
+
+  // Sample data
+  const sampleData = [
+    { Date: '2024-01-01', Yield_kg_per_hectare: 3500 },
+    { Date: '2024-02-01', Yield_kg_per_hectare: 4000 },
+    { Date: '2024-03-01', Yield_kg_per_hectare: 4500 },
+    { Date: '2024-04-01', Yield_kg_per_hectare: 5000 },
+    { Date: '2024-05-01', Yield_kg_per_hectare: 5500 },
+    { Date: '2024-06-01', Yield_kg_per_hectare: 6000 },
+    { Date: '2024-07-01', Yield_kg_per_hectare: 6500 },
+    { Date: '2024-08-01', Yield_kg_per_hectare: 7000 },
+    { Date: '2024-09-01', Yield_kg_per_hectare: 7500 },
+    { Date: '2024-10-01', Yield_kg_per_hectare: 8000 },
+    { Date: '2024-11-01', Yield_kg_per_hectare: 8500 },
+    { Date: '2024-12-01', Yield_kg_per_hectare: 9000 }
+  ];
+
+  // Map the sample data to the appropriate format for the chart
+  const labels = sampleData.map(item => item.Date); // Use Date as the x-axis labels
+  const yieldData = sampleData.map(item => item.Yield_kg_per_hectare); // Use Yield as the y-axis data
+
+  // Create the line chart with the sample data
+  const myLineChart = new Chart(ctx, {
+    type: 'line',
+    data: {
+      labels: labels,  // X-axis labels (dates)
+      datasets: [{
+        label: 'Yield per Month',
+        data: yieldData, // Y-axis data (yield per hectare)
+        borderColor: 'blue',
+        backgroundColor: 'rgba(0, 0, 255, 0.2)', // Fill color for the area
+        borderWidth: 2,
+        tension: 0.3 // Makes the line smooth
+      }]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      scales: {
+        x: {
+          title: { display: true, text: 'Date' }
+        },
+        y: {
+          title: { display: true, text: 'Yield (kg/hectare)' },
+          beginAtZero: true
+        }
+      }
+    }
+  });
+</script>
+
+<script>
+  // Get the canvas element
+  const ctxPie = document.getElementById('myPieChart').getContext('2d');
+
+  const myPieChart = new Chart(document.getElementById('myPieChart'), {
+    type: 'pie',
+    data: {
+        labels: ['Rice', 'Corn', 'Wheat', 'Soybeans'],
+        datasets: [{
+            data: [40, 30, 15, 15],
+            backgroundColor: ['red', 'blue', 'green', 'yellow'],
+        }]
+    },
+    options: {
+        responsive: true,
+        maintainAspectRatio: false, // Allows resizing
+        plugins: {
+            legend: {
+                display: false // Hides the labels
+            }
+        },
+        layout: {
+            padding: 20 // Optional padding inside chart area
+        },
+        // Increase the quality by adjusting device pixel ratio
+        devicePixelRatio: window.devicePixelRatio > 1 ? 2 : 1
+    }
+});
+</script>
+</body>
 </html>

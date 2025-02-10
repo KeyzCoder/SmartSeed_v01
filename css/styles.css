@@ -236,10 +236,16 @@ html, body {
   
   .card:first-child {
     background-color: #2962ff;
+    position: absolute;
+    bottom: 10px; /* Moves the item 20px from the bottom */
+    left: 280px;
   }
   
   .card:nth-child(2) {
     background-color: #ff6d00;
+    position: absolute;
+    bottom: 10px; /* Moves the item 20px from the bottom */
+    left: 550px;
   }
   
   .card:nth-child(3) {
@@ -299,17 +305,17 @@ html, body {
     margin: 20px auto; /* Center the chart */
     display: block; /* Ensure proper alignment */
     position: absolute;
-    bottom: -5px; /* Moves the item 20px from the bottom */
+    bottom: 250px; /* Moves the item 20px from the bottom */
     left: 280px;
   }  
 
   #myPieChart {
-    width: 200px !important;  /* Increase width */
-    height: 380px !important; /* Increase height */
+    width: 1000px !important;  /* Increase width */
+    height: 1080px !important; /* Increase height */
     max-width: 200px;
     max-height: 200px;
     position: absolute;
-    bottom: 90px; /* Moves the item 20px from the bottom */
+    bottom: 320px; /* Moves the item 20px from the bottom */
     left: 1115px;
   }
   

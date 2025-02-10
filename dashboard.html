@@ -152,54 +152,44 @@
   // Get the canvas element
   const ctx = document.getElementById('myLineChart').getContext('2d');
 
-  // Sample data
-  const sampleData = [
-    { Date: '2024-01-01', Yield_kg_per_hectare: 3500 },
-    { Date: '2024-02-01', Yield_kg_per_hectare: 4000 },
-    { Date: '2024-03-01', Yield_kg_per_hectare: 4500 },
-    { Date: '2024-04-01', Yield_kg_per_hectare: 5000 },
-    { Date: '2024-05-01', Yield_kg_per_hectare: 5500 },
-    { Date: '2024-06-01', Yield_kg_per_hectare: 6000 },
-    { Date: '2024-07-01', Yield_kg_per_hectare: 6500 },
-    { Date: '2024-08-01', Yield_kg_per_hectare: 7000 },
-    { Date: '2024-09-01', Yield_kg_per_hectare: 7500 },
-    { Date: '2024-10-01', Yield_kg_per_hectare: 8000 },
-    { Date: '2024-11-01', Yield_kg_per_hectare: 8500 },
-    { Date: '2024-12-01', Yield_kg_per_hectare: 9000 }
-  ];
+  // Fetch data from the API
+  fetch('http://localhost:3000/api/data')
+    .then(response => response.json())
+    .then(data => {
+      // Map the fetched data to chart format
+      const labels = data.map(item => item.Date); // X-axis labels (dates)
+      const yieldData = data.map(item => item.Yield_kg_per_hectare); // Y-axis data (yield per hectare)
 
-  // Map the sample data to the appropriate format for the chart
-  const labels = sampleData.map(item => item.Date); // Use Date as the x-axis labels
-  const yieldData = sampleData.map(item => item.Yield_kg_per_hectare); // Use Yield as the y-axis data
-
-  // Create the line chart with the sample data
-  const myLineChart = new Chart(ctx, {
-    type: 'line',
-    data: {
-      labels: labels,  // X-axis labels (dates)
-      datasets: [{
-        label: 'Yield per Month',
-        data: yieldData, // Y-axis data (yield per hectare)
-        borderColor: 'blue',
-        backgroundColor: 'rgba(0, 0, 255, 0.2)', // Fill color for the area
-        borderWidth: 2,
-        tension: 0.3 // Makes the line smooth
-      }]
-    },
-    options: {
-      responsive: true,
-      maintainAspectRatio: false,
-      scales: {
-        x: {
-          title: { display: true, text: 'Date' }
+      // Create the line chart with the fetched data
+      const myLineChart = new Chart(ctx, {
+        type: 'line',
+        data: {
+          labels: labels,  // X-axis labels (dates)
+          datasets: [{
+            label: 'Yield per Month',
+            data: yieldData, // Y-axis data (yield per hectare)
+            borderColor: 'blue',
+            backgroundColor: 'rgba(0, 0, 255, 0.2)', // Fill color for the area
+            borderWidth: 2,
+            tension: 0.3 // Makes the line smooth
+          }]
         },
-        y: {
-          title: { display: true, text: 'Yield (kg/hectare)' },
-          beginAtZero: true
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          scales: {
+            x: {
+              title: { display: true, text: 'Date' }
+            },
+            y: {
+              title: { display: true, text: 'Yield (kg/hectare)' },
+              beginAtZero: true
+            }
+          }
         }
-      }
-    }
-  });
+      });
+    })
+    .catch(error => console.error('Error fetching data:', error));
 </script>
 
 <script>

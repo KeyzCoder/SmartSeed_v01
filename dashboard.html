@@ -104,6 +104,33 @@
         </div>
       </main>
 
+      <div class="card2">
+        <div class="card-inner">
+          <h3>Mother Seed</h3>
+          <div class="seed-info">
+            <span class="material-icons-outlined">eco</span>
+          </div>
+        </div>
+        <div class="seed-data">
+          <div class="data-row">
+            <span class="rice-type">Pure Rice</span>
+            <span class="rice-percentage">85%</span>
+          </div>
+          <div class="data-row">
+            <span class="rice-type">Jasmine Rice</span>
+            <span class="rice-percentage">80%</span>
+          </div>
+          <div class="data-row">
+            <span class="rice-type">Black Rice</span>
+            <span class="rice-percentage">75%</span>
+          </div>
+          <div class="data-row">
+            <span class="rice-type">Sticky Rice</span>
+            <span class="rice-percentage">90%</span>
+          </div>
+        </div>
+      </div>
+
       <canvas id="myLineChart"></canvas>
 
       <canvas id="myPieChart"></canvas>
@@ -197,7 +224,6 @@ fetch('http://localhost:3000/api/data')
   const myPieChart = new Chart(ctxPie, {
     type: 'pie',
     data: {
-        labels: ['Rice', 'Corn', 'Wheat', 'Soybeans'],
         datasets: [{
             data: [40, 30, 15, 15],
             backgroundColor: ['red', 'blue', 'green', 'yellow'],

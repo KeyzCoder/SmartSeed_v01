@@ -30,7 +30,7 @@ html, body {
   text-align: center;        /* Center the button inside the container */
   margin-top: 20px;          /* Add space from other content */
   position: absolute;      /* Position container absolute so we can drag it */
-  top: 550px;               /* Position container at 50px from top */
+  top: -10px;               /* Position container at 50px from top */
   left: 300px;              /* Position container at 50px from left */
 }
 
@@ -222,7 +222,7 @@ html, body {
   .main-cards {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
-    gap: 20px;
+    gap: 30px;
     margin: 20px 0;
   }
   
@@ -230,8 +230,11 @@ html, body {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    padding: 25px;
+    padding: 55px;
     border-radius: 5px;
+    width: 280px;
+    margin-bottom: 20px; /* Adds space below each card */
+    box-shadow: 0 6px 7px -4px rgba(0, 0, 0, 0.2);  
   }
   
   .card:first-child {
@@ -245,7 +248,7 @@ html, body {
     background-color: #ff6d00;
     position: absolute;
     bottom: 10px; /* Moves the item 20px from the bottom */
-    left: 550px;
+    left: 680px;
   }
   
   .card:nth-child(3) {
@@ -310,13 +313,106 @@ html, body {
   }  
 
   #myPieChart {
-    width: 1000px !important;  /* Increase width */
+    width: 500px !important;  /* Increase width */
     height: 1080px !important; /* Increase height */
     max-width: 200px;
     max-height: 200px;
     position: absolute;
     bottom: 320px; /* Moves the item 20px from the bottom */
     left: 1115px;
+  }
+
+  .card2 {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    padding: 20px;
+    margin: 10px;
+    height: 280px;
+    width: 200px; /* Adjust width as needed */
+    font-family: 'Montserrat', sans-serif;
+
+    position: absolute;
+    bottom: 0px; /* Moves the item 20px from the bottom */
+    left: 1080px;
+  }
+  
+  /* Top section of the card */
+.card-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.card-inner h3 {
+  font-size: 20px;
+  margin: 0;
+  color: #2c3e50;
+}
+
+/* Seed information (icon + seed name) */
+.seed-info {
+  display: flex;
+  align-items: center;
+}
+
+.seed-info .material-icons-outlined {
+  font-size: 24px;
+  margin-right: 5px;
+  color: #27ae60;
+}
+
+.seed-name {
+  font-size: 18px;
+  font-weight: 600;
+  color: #333;
+}
+
+/* Container for rice data rows */
+.seed-data {
+  border-top: 1px solid #eee;
+  padding-top: 15px;
+}
+
+/* Each row containing a rice type and its percentage */
+.data-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.rice-type {
+  font-size: 16px;
+  color: #2c3e50;
+}
+
+.rice-percentage {
+  font-size: 16px;
+  color: #27ae60;
+  font-weight: bold;
+}
+  
+  /* Yield Info Container */
+  .yield-info {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+  }
+  
+  /* Yield Value */
+  .yield-info h1 {
+    font-size: 48px;
+    margin: 0;
+    color: #2c3e50;
+  }
+  
+  /* Percentage Styling */
+  .yield-percentage {
+    font-size: 18px;
+    color: #27ae60;
+    margin-left: 10px;
   }
   
   /* ---------- MEDIA QUERIES ---------- */

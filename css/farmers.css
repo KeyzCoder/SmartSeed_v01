@@ -141,6 +141,10 @@ tr:hover {
     cursor: pointer;         /* Change cursor to pointer when hovering */
 }
 
+#nameFilter {
+  display: none;
+}
+
 .my-button-red:hover {
     background-color: #b30000; /* Darker blue on hover */
 }
